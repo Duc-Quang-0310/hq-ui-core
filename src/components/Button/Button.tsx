@@ -1,4 +1,5 @@
 import React, { FC, HTMLAttributes, ReactNode } from 'react';
+import '../../global.css';
 export interface HQButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
   prefixEl?: ReactNode;
