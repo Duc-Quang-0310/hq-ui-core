@@ -6,7 +6,7 @@ export interface HQButtonProps extends HTMLAttributes<HTMLButtonElement> {
   surfixEl?: ReactNode;
   size?: 'xs' | 's' | 'md' | 'lg';
   variant?: 'solid' | 'ghost' | 'dash' | 'text';
-  type?: 'primary' | 'success' | 'warning' | 'error';
+  btnType?: 'primary' | 'success' | 'warning' | 'error';
   disabled?: boolean;
 }
 
@@ -16,7 +16,7 @@ export const Button: FC<HQButtonProps> = ({
   prefixEl,
   size = 'md',
   variant = 'solid',
-  type = 'primary',
+  btnType = 'primary',
   disabled = false,
   className,
   ...other
@@ -25,8 +25,8 @@ export const Button: FC<HQButtonProps> = ({
     {...other}
     data-size={size}
     data-variant={variant}
-    data-type={type}
-    className={` ${size} ${variant} ${type} button-default ${
+    data-type={btnType}
+    className={` ${size} ${variant} ${btnType} button-default ${
       disabled ? 'disableBtn' : ''
     } ${className}`}
   >
