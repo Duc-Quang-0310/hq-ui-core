@@ -1,6 +1,5 @@
 import React, { FC, HTMLAttributes, ReactNode } from 'react';
 import cn from 'clsx';
-import './Button.css';
 
 export interface HQButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
