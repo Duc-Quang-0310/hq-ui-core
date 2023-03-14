@@ -10,16 +10,20 @@ module.exports = {
   rollup(config, options) {
     config.plugins.push(
       postcss({
-        modules: true,
         plugins: [
           autoprefixer(),
           cssnano({
             preset: 'default',
           }),
         ],
-        sourceMap: true,
-        inject: true,
-        extract: false,
+        // sourceMap: true,
+        // inject: true,
+        // extract: false,
+        inject: false,
+        // only write out CSS for the first bundle (avoids pointless extra files):
+        // extract: !!options.writeMeta,
+        extract: path.resolve('dist/styles.min.css'),
+        minimize: true,
       })
     );
     return config;

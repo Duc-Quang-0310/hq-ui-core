@@ -14,54 +14,54 @@
   
   /* sizing */
 .xs {
-    padding: 1px 8px;
-    font-weight: 500;
-    font-size: 12px;
-    line-height: 16px;
-    font-style: normal;
-  }
+  padding: 1px 8px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: normal;
+}
   
-  .s {
-    padding: 5px 12px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 22px;
-  }
+.s {
+  padding: 5px 12px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+}
   
-  .md {
-    padding: 9px 16px;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 23px;
-  }
+.md {
+  padding: 9px 16px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 23px;
+}
   
-  .lg {
-    padding: 12px 20px;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
-    line-height: 24px;
-  }
+.lg {
+  padding: 12px 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
   
-  .disableBtn {
-    background: #ECEFF4;
-    border: 1px solid #CCD4E1;
-    border-radius: 8px;
-    cursor: not-allowed;
-    color: #BFCAD9;
-  }
+.disableBtn {
+  background: #ECEFF4;
+  border: 1px solid #CCD4E1;
+  border-radius: 8px;
+  cursor: not-allowed;
+  color: #BFCAD9;
+}
   
-  .solid, .text {
-    border: none;
-  }
+.solid, .text {
+  border: none;
+}
   
-  .solid {
-    color: white;
-  }
+.solid {
+  color: white;
+}
   
-  /* variant SOLID */
+/* variant SOLID */
   button[data-variant="solid"][data-type="primary"]  {
     background-color: #366AE2;
   }
