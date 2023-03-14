@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes, ReactNode } from 'react';
-import cn from 'clsx';
+// import cn from 'clsx';
 
 export interface HQButtonProps extends HTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
@@ -27,16 +27,9 @@ export const Button: FC<HQButtonProps> = ({
     data-size={size}
     data-variant={variant}
     data-type={type}
-    className={cn(
-      size,
-      variant,
-      type,
-      'button-default',
-      {
-        disableBtn: disabled,
-      },
-      className
-    )}
+    className={` ${size} ${variant} ${type} button-default ${
+      disabled ? 'disableBtn' : ''
+    } ${className}`}
   >
     <span className="prefix">{prefixEl}</span>
     {children}
