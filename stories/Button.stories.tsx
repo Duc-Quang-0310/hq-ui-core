@@ -3,7 +3,7 @@ import { Meta, Story } from '@storybook/react';
 import { Button, HQButtonProps } from '../src';
 
 const meta: Meta<HQButtonProps> = {
-  title: 'Welcome',
+  title: 'BUTTON',
   component: Button,
   argTypes: {
     children: {

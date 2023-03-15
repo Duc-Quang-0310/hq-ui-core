@@ -1,3 +1,4 @@
+/* Button */
 .prefix {
     padding-right: 8px;
   }
@@ -309,6 +310,265 @@
     background-color: #FCEEED;
     outline: 3px solid #F5C0BC;
   }
+
+/* Title */
+
+div[data-text-variant="subtitle1"]{
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+div[data-text-variant="subtitle2"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+div[data-text-variant="subtitle3"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="subtitle4"]{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+div[data-text-variant="subtitle5"]{
+  font-size: 10px;
+  line-height: 14px;
+  font-weight: 400;
+}
+
+div[data-text-variant="body1"]{
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+div[data-text-variant="body2"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+div[data-text-variant="body3"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="button1"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+div[data-text-variant="button2"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+div[data-text-variant="button3"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+div[data-text-variant="button4"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="button5"]{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+}
+
+div[data-text-variant="button6"]{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+div[data-text-variant="label1"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+div[data-text-variant="label2"]{
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="label3"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 500;
+}
+
+div[data-text-variant="label4"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="label5"]{
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+}
+
+div[data-text-variant="placeholder1"]{
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+div[data-text-variant="placeholder2"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+div[data-text-variant="hightlight1"]{
+  font-size: 56px;
+  line-height: 68px;
+  font-weight: 500;
+}
+
+div[data-text-variant="hightlight2"]{
+  font-size: 46px;
+  line-height: 56px;
+  font-weight: 500;
+}
+
+div[data-text-variant="hightlight3"]{
+  font-size: 38px;
+  line-height: 46px;
+  font-weight: 500;
+}
+
+div[data-text-variant="hightlight4"]{
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 500;
+}
+
+div[data-text-variant="hightlight5"]{
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+}
+
+div[data-text-variant="hightlight6"]{ 
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+/* Text */
+div[data-title-variant="h1"]{
+  font-size: 56px;
+  line-height: 68px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h2"]{
+  font-size: 46px;
+  line-height: 56px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h3"]{
+  font-size: 38px;
+  line-height: 46px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h4"]{
+  font-size: 30px;
+  line-height: 38px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h5"]{
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h6"]{
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h7"]{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h8"]{
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 600;
+}
+
+div[data-title-variant="h9"]{
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+/* Spacing */
+
+.spacing {
+  display: flex;
+}
+.spacing4{
+  gap: 4px;
+}
+.spacing8{
+  gap: 8px;
+}
+.spacing12{
+  gap: 12px;
+}
+.spacing16{
+  gap: 16px;
+}
+.spacing24{
+  gap: 24px;
+}
+.spacing32{
+  gap: 32px;
+}
+.spacing40{
+ gap: 40px;
+}
+.spacing42{
+  gap: 42px;
+}
+.spacingrow{
+  flex-direction: row;
+}
+.spacingcolumn{
+  flex-direction: column;
+}
+
+
+
+
   
   
   
