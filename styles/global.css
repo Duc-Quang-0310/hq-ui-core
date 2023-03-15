@@ -566,6 +566,211 @@ div[data-title-variant="h9"]{
   flex-direction: column;
 }
 
+/* CheckBox */
+/* The container */
+label[data-container="hq-checkbox-container"] {
+  display: inline-flex;
+  margin-bottom: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+/* Hide the browser's default checkbox */
+label[data-container="hq-checkbox-container"] input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+label[data-container="hq-checkbox-container"] .checkmark {
+  position: relative;
+  background-color: white;
+  border:2.5px solid #CCD4E1;
+  border-radius: 6px;
+  margin-right: 8px;
+  transition: all 0.1s ease-in; 
+}
+
+/* On mouse-over, add a background color */
+label[data-container="hq-checkbox-container"]:hover input ~ .checkmark {
+  background-color: #ECEFF4;
+}
+
+/* When the checkbox is checked, add a background */
+label[data-container="hq-checkbox-container"] input:checked ~ .checkmark {
+  background-color: currentColor;
+  border:2.5px solid currentColor;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+label[data-container="hq-checkbox-container"] .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  transition: all 0.1s ease;
+}
+
+/* Show the checkmark when checked */
+label[data-container="hq-checkbox-container"] input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+label[data-container="hq-checkbox-container"] .checkmark[data-indeterminate="false"]:after {
+  left: 0.4em;
+  top: 0.1em;
+  width: 0.2em;
+  height: 0.5em;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label[data-container="hq-checkbox-container"] .checkmark[data-indeterminate="true"]:after {
+  left: 0.15em;
+  top: 0.45em;
+  width: 0.7em;
+  height: 0.05em;
+  background-color: white;
+}
+
+/* handle disable */
+label[data-checkbox-disabled="true"] {
+  pointer-events: none;
+}
+
+label[data-checkbox-disabled="true"] .checkmark{
+  background-color: #ECEFF4;
+}
+
+label[data-checkbox-disabled="true"] .checkmark[data-indeterminate="false"]:after {
+  left: 0.4em;
+  top: 0.1em;
+  width: 0.2em;
+  height: 0.5em;
+  border: solid #9FB0C7;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+label[data-checkbox-disabled="true"] .checkmark[data-indeterminate="true"]:after {
+  left: 0.15em;
+  top: 0.45em;
+  width: 0.7em;
+  height: 0.05em;
+  background-color: #9FB0C7;
+}
+
+label[data-checkbox-disabled="true"] input:checked ~ .checkmark {
+  background-color: #ECEFF4;
+  border:2.5px solid #CCD4E1;
+}
+
+/* Radio button */
+/* The container */
+label[data-container="hq-radio-button"] {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Hide the browser's default radio button */
+label[data-container="hq-radio-button"] .hq-radio-input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Create a custom radio button */
+.checkmark-radio {
+  position: relative;
+  border-radius: 50%;
+  margin-right: 8px;
+  border: 3px solid #CCD4E1;
+  transition: all 0.1s ease;
+}
+
+/* On mouse-over, add a background color */
+label[data-container="hq-radio-button"]:hover .hq-radio-input ~ .checkmark-radio {
+  background-color: #E5EAF0;
+}
+
+/* When the radio button is checked, add a background */
+label[data-container="hq-radio-button"][data-radio-disabled="false"] .hq-radio-input:checked ~ .checkmark-radio {
+  background-color: white;
+  border: 3px solid currentColor;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+/* Show the indicator (dot/circle) when checked */
+label[data-container="hq-radio-button"] .hq-radio-input:checked ~ .checkmark-radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+label[data-container="hq-radio-button"] .checkmark-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+ 	top: 0.2em;
+	left: 0.2em;
+	width: 0.6em;
+	height: 0.6em;
+	border-radius: 50%;
+	background: currentColor;
+}
+
+/* disable */
+label[data-radio-disabled="true"] {
+  pointer-events: none;
+}
+
+label[data-radio-disabled="true"] .checkmark-radio {
+  border: 3px solid #CCD4E1;
+  background-color: #ECEFF4;
+}
+
+label[data-radio-disabled="true"] .hq-radio-input:checked ~ .checkmark-radio:after {
+  display: block;
+}
+
+/* Style the indicator (dot/circle) */
+label[data-radio-disabled="true"] .checkmark-radio:after {
+  content: "";
+  position: absolute;
+  display: none;
+ 	top: 0.2em;
+	left: 0.2em;
+	width: 0.6em;
+	height: 0.6em;
+	border-radius: 50%;
+	background: #BFCAD9;
+}
+
+
+
+
+
 
 
 
