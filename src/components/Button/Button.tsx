@@ -10,7 +10,7 @@ export interface HQButtonProps
   surfixEl?: React.ReactNode;
   size?: HQButtonSize;
   variant?: HQButtonVariant;
-  btnType?: HQButtonVariant;
+  btnType?: HQButtonType;
   disabled?: boolean;
 }
 

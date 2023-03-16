@@ -983,7 +983,29 @@ div[data-number-picker-size][data-number-picker-disabled="true"] input {
   color: #BFCAD9 !important
 }
 
+/* Rating */
+div[data-rating] {
+  display: flex;
+}
 
+div[data-rating] svg path, div[data-rating] svg {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+div[data-rating] svg[data-hover="true"] {
+  scale: 1.2;
+  color: currentColor
+}
+
+div[data-rating] svg[data-hover="true"] path,div[data-rating] svg[data-filled="true"] path{
+  fill: currentColor 
+}
+
+/* Press event */
+/* div[data-rating] svg:active  {
+  box-shadow: 0px 0px 7px #1D50C9;
+} */
 
 
 

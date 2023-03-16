@@ -1,54 +1,87 @@
 import React from 'react';
 
-interface StarProps {
+type NumberOfStars = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
+
+type MergedStarProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'onChange'>;
+
+export interface HQRatingProps extends MergedStarProps {
+  numberOfStar?: NumberOfStars;
+  starGap?: number | string;
+  defaultValue?: number;
+  value?: number;
+  onChangeRate?: (star: number) => void;
+  allowClear?: boolean;
   width?: number | string;
   height?: number | string;
   fill?: string;
-  borderFill?: string;
 }
-
-type Enumerate<
-  N extends number,
-  Acc extends number[] = []
-> = Acc['length'] extends N
-  ? Acc[number]
-  : Enumerate<N, [...Acc, Acc['length']]>;
-
-type IntRange<F extends number, T extends number> = Exclude<
-  Enumerate<T>,
-  Enumerate<F>
->;
-
-export interface HQRatingProps extends React.HTMLAttributes<HTMLDivElement> {
-  numberOfStar?: IntRange<1, 100>;
-}
-
-const Star: React.FC<StarProps> = ({
-  borderFill = '#9FB0C7',
-  fill = 'none',
-  height = '18',
-  width = '17',
-}) => {
-  return (
-    <svg
-      width={width}
-      height={height}
-      viewBox={`0 0 ${height} ${width}`}
-      fill={fill}
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M8.99984 0.666992C9.28822 0.666992 9.55159 0.830722 9.6792 1.08933L11.8438 5.47606L16.6845 6.17939C16.9699 6.22086 17.207 6.42073 17.2961 6.69498C17.3852 6.96923 17.3109 7.27029 17.1044 7.47157L13.6017 10.886L14.4283 15.7071C14.4771 15.9913 14.3602 16.2786 14.1269 16.4481C13.8936 16.6175 13.5843 16.6399 13.329 16.5056L8.99984 14.229L4.67065 16.5056C4.41541 16.6399 4.10611 16.6175 3.87279 16.4481C3.63948 16.2786 3.52262 15.9913 3.57135 15.7071L4.39799 10.886L0.895293 7.47157C0.688804 7.27029 0.614494 6.96923 0.703608 6.69498C0.792722 6.42073 1.0298 6.22086 1.31517 6.17939L6.15583 5.47606L8.32047 1.08933C8.44809 0.830722 8.71146 0.666992 8.99984 0.666992ZM8.99984 3.13656L7.3383 6.50373C7.22795 6.72734 7.01463 6.88234 6.76786 6.91819L3.05207 7.45809L5.74078 10.079C5.91931 10.2531 6.00078 10.5038 5.95865 10.7495L5.32414 14.4501L8.64722 12.7025C8.86797 12.5864 9.13171 12.5864 9.35245 12.7025L12.6755 14.4501L12.041 10.7495C11.9989 10.5038 12.0804 10.2531 12.2589 10.079L14.9476 7.45809L11.2318 6.91819C10.985 6.88234 10.7717 6.72734 10.6614 6.50373L8.99984 3.13656Z"
-        fill={borderFill}
-      />
-    </svg>
-  );
-};
 
 export const Rating = React.forwardRef<HTMLDivElement, HQRatingProps>(
-  ({ numberOfStar = 5, ...other }, ref) => {
-    return <div ref={ref} {...other}></div>;
+  (
+    {
+      numberOfStar = 5,
+      width = 25,
+      height = 25,
+      fill = 'gold',
+      starGap = 3,
+      defaultValue,
+      value,
+      style,
+      onChangeRate,
+      allowClear = false,
+      ...other
+    },
+    ref
+  ) => {
+    const uniqueId = React.useMemo(
+      () =>
+        String.fromCharCode(65 + Math.floor(Math.random() * 26)) + Date.now(),
+      []
+    );
+    const [star, setStar] = React.useState<number>(value || defaultValue || 0);
+    const [hoverStar, setHoverStar] = React.useState(0);
+    const handleOnClick = (index: number) => {
+      if (allowClear && index === star - 1) {
+        setStar(0);
+        onChangeRate?.(0);
+      } else {
+        setStar(index + 1);
+        onChangeRate?.(index + 1);
+      }
+    };
+
+    return (
+      <div
+        ref={ref}
+        data-rating
+        style={{
+          gap: starGap,
+          ...style,
+        }}
+        {...other}
+      >
+        {new Array(numberOfStar).fill('star').map((s, index) => (
+          <svg
+            key={`${s}-${uniqueId + index}`}
+            width={width}
+            height={height}
+            viewBox="0 0 18 17"
+            xmlns="http://www.w3.org/2000/svg"
+            onClick={() => handleOnClick(index)}
+            onMouseEnter={() => setHoverStar(index + 1)}
+            onMouseLeave={() => setHoverStar(0)}
+            data-hover={index <= hoverStar - 1}
+            data-filled={hoverStar ? 'false' : !!star && index <= star - 1}
+            color={fill}
+          >
+            <path
+              d="M7.22303 0.665992C7.32551 0.419604 7.67454 0.419604 7.77702 0.665992L9.41343 4.60039C9.45663 4.70426 9.55432 4.77523 9.66645 4.78422L13.914 5.12475C14.18 5.14607 14.2878 5.47802 14.0852 5.65162L10.849 8.42374C10.7636 8.49692 10.7263 8.61176 10.7524 8.72118L11.7411 12.866C11.803 13.1256 11.5206 13.3308 11.2929 13.1917L7.6564 10.9705C7.5604 10.9119 7.43965 10.9119 7.34365 10.9705L3.70718 13.1917C3.47945 13.3308 3.19708 13.1256 3.25899 12.866L4.24769 8.72118C4.2738 8.61176 4.23648 8.49692 4.15105 8.42374L0.914889 5.65162C0.712228 5.47802 0.820086 5.14607 1.08608 5.12475L5.3336 4.78422C5.44573 4.77523 5.54342 4.70426 5.58662 4.60039L7.22303 0.665992Z"
+              color={fill}
+              fill="#9FB0C7"
+            />
+          </svg>
+        ))}
+      </div>
+    );
   }
 );
