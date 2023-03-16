@@ -5,4 +5,6 @@ export * from './components/Text/Text';
 export * from './components/Spacing/Spacing';
 export * from './components/Checkbox/Checkbox';
 export * from './components/Radio/Radio';
+export * from './components/Avatar/Avatar';
+export * from './components/Image/Images';
 export * from './constant/color';

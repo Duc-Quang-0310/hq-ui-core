@@ -767,6 +767,81 @@ label[data-radio-disabled="true"] .checkmark-radio:after {
 	background: #BFCAD9;
 }
 
+/* Avatar */
+img[data-avatar], div[data-avatar] {
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+img[data-avatar="xxs"], div[data-avatar="xxs"] {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
+img[data-avatar="xs"], div[data-avatar="xs"] {
+  object-fit: cover;
+  width: 48px;
+  height: 48px;
+}
+
+img[data-avatar="sm"], div[data-avatar="sm"] {
+  object-fit: cover;
+  width: 56px;
+  height: 56px;
+}
+
+img[data-avatar="md"], div[data-avatar="md"] {
+  object-fit: cover;
+  width: 64px;
+  height: 64px;
+}
+
+img[data-avatar="lg"], div[data-avatar="lg"] {
+  object-fit: cover;
+  width: 80px;
+  height: 80px;
+}
+
+img[data-avatar="xl"], div[data-avatar="xl"] {
+  object-fit: cover;
+  width: 104px;
+  height: 104px;
+}
+
+img[data-avatar="xxl"], div[data-avatar="xxl"] {
+  object-fit: cover;
+  width: 148px;
+  height: 148px;
+}
+
+.hq-avatar-loading {
+  filter: blur(15px);
+  clip-path: inset(0);
+}
+
+.hq-avatar-loaded {
+  filter: blur(0px);
+  transition: filter 0.2s linear;
+}
+
+/* Skeleton loading */
+.hq-skeleton {
+  animation: hq-skeleton-loading 0.9s linear infinite alternate;
+}
+
+@keyframes hq-skeleton-loading {
+  0% {
+    background-color: hsl(200, 20%, 80%);
+  }
+  100% {
+    background-color: hsl(200, 20%, 95%);
+  }
+}
+/* Skeleton loading */
+
+
+
 
 
 
