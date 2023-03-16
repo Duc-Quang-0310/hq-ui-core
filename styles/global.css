@@ -46,12 +46,12 @@
   line-height: 24px;
 }
   
-.disableBtn {
-  background: #ECEFF4;
-  border: 1px solid #CCD4E1;
-  border-radius: 8px;
-  cursor: not-allowed;
-  color: #BFCAD9;
+button[data-btn-disable="true"]{
+  background-color: #ECEFF4 !important;
+  border-color: #BFCAD9 !important;
+  cursor: not-allowed !important;
+  color: #BFCAD9 !important;
+  pointer-events: none !important;
 }
   
 .solid, .text {
@@ -309,6 +309,79 @@
   button[data-variant="text"][data-type="error"]:focus-visible  {
     background-color: #FCEEED;
     outline: 3px solid #F5C0BC;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="solid"] {
+    background-color: currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="solid"]:focus {
+    box-shadow: 0px 0px 7px currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="solid"]:hover {
+    filter: brightness(130%);
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="solid"]:focus-visible {
+    background-color: currentColor;
+    outline: 3px solid currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="ghost"] {
+    border: 1px solid currentColor;
+    color: currentColor;
+    background-color: white;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="ghost"]:focus {
+    box-shadow: 0px 0px 7px currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="ghost"]:hover {
+    background-color: #EDF2FD;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="ghost"]:focus-visible {
+    background-color: #E8F7EF;
+    outline: 3px solid currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="dash"] {
+    border: 1px dashed currentColor;
+    color: currentColor;
+    background-color: white;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="dash"]:focus {
+    box-shadow: 0px 0px 7px currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="dash"]:hover {
+    background-color: #EDF2FD;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="dash"]:focus-visible {
+    background-color: #E8F7EF;
+    outline: 3px solid currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="text"] {
+    color: currentColor;
+    background-color: white;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="text"]:focus {
+    box-shadow: 0px 0px 7px currentColor;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="text"]:hover {
+    background-color: #E8F7EF;
+  }
+
+  button[data-color]:not([data-color="null"])[data-variant="text"]:focus-visible {
+    background-color: #E8F7EF;
+    outline: 3px solid currentColor;
   }
 
 /* Title */
@@ -839,6 +912,81 @@ img[data-avatar="xxl"], div[data-avatar="xxl"] {
   }
 }
 /* Skeleton loading */
+
+/* Number picker */
+
+input[data-custom="hq-input-number"][type="number"] {
+  outline: none;
+  border: none;
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
+}
+input[data-custom="hq-input-number"][type=number]::-webkit-inner-spin-button, 
+input[data-custom="hq-input-number"][type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+input[data-custom="hq-input-number"][type="number"]:focus {
+  outline: none;
+  border: none;
+}
+
+div[data-number-picker-size] {
+  display: inline-flex;
+}
+
+div[data-number-picker-size="lg"] {
+  font-size: 20px;
+}
+
+div[data-number-picker-size="md"] {
+  font-size: 17px;
+}
+
+div[data-number-picker-size="s"] {
+  font-size: 14px;
+}
+
+div[data-number-picker-size="xs"] {
+  font-size: 12px;
+}
+
+div[data-number-picker-size] input {
+  pointer-events: none;
+  width: 3em;
+  text-align: center;
+  margin-left:0.3em;
+  margin-right:0.3em;
+  color: currentColor;
+  font-size: 1.2em;
+  font-weight: 400;
+}
+
+div[data-number-picker-size] button span {
+  font-size: 1.5em;
+  min-width: 0.8em;
+  font-weight: bold;
+}
+
+div[data-number-picker-size] button  {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+div[data-number-picker-size][data-number-picker-disabled="true"] button span {
+  color: #BFCAD9 !important
+}
+
+div[data-number-picker-size][data-number-picker-disabled="true"] input {
+  background-color: white;
+  color: #BFCAD9 !important
+}
+
+
+
+
+
 
 
 

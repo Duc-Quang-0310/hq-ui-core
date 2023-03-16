@@ -1,12 +1,16 @@
 import React from 'react';
+
+export type HQButtonType = 'primary' | 'success' | 'warning' | 'error';
+export type HQButtonVariant = 'solid' | 'ghost' | 'dash' | 'text';
+export type HQButtonSize = 'xs' | 's' | 'md' | 'lg';
 export interface HQButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   prefixEl?: React.ReactNode;
   surfixEl?: React.ReactNode;
-  size?: 'xs' | 's' | 'md' | 'lg';
-  variant?: 'solid' | 'ghost' | 'dash' | 'text';
-  btnType?: 'primary' | 'success' | 'warning' | 'error';
+  size?: HQButtonSize;
+  variant?: HQButtonVariant;
+  btnType?: HQButtonVariant;
   disabled?: boolean;
 }
 
@@ -22,6 +26,8 @@ export const Button = React.forwardRef<HTMLButtonElement, HQButtonProps>(
       disabled = false,
       type = 'button',
       className,
+      color,
+      style,
       ...other
     },
     ref
@@ -31,15 +37,19 @@ export const Button = React.forwardRef<HTMLButtonElement, HQButtonProps>(
       data-size={size}
       data-variant={variant}
       data-type={btnType}
-      className={` ${size} ${variant} ${btnType} button-default ${
-        disabled ? 'disableBtn' : ''
-      } ${className}`}
+      data-color={color || 'null'}
+      data-btn-disable={disabled}
+      className={`${size} ${variant} ${btnType} button-default ${className}`}
       type={type}
       ref={ref}
+      style={{
+        color,
+        ...style,
+      }}
     >
-      <span className="prefix">{prefixEl}</span>
+      {prefixEl ? <span className="prefix">{prefixEl}</span> : null}
       {children}
-      <span className="surfix">{surfixEl}</span>
+      {surfixEl ? <span className="surfix">{surfixEl}</span> : null}
     </button>
   )
 );

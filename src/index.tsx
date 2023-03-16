@@ -7,4 +7,5 @@ export * from './components/Checkbox/Checkbox';
 export * from './components/Radio/Radio';
 export * from './components/Avatar/Avatar';
 export * from './components/Image/Images';
+export * from './components/NumberPicker/NumberPicker';
 export * from './constant/color';
