@@ -9,4 +9,7 @@ export * from './components/Avatar/Avatar';
 export * from './components/Image/Images';
 export * from './components/NumberPicker/NumberPicker';
 export * from './components/Rating/Rating';
+export * from './components/Switch/Switch';
+export * from './components/Divider/Divider';
+export * from './components/Popup/Popup';
 export * from './constant/color';

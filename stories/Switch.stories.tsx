@@ -1,32 +1,17 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Radio, HQRadio } from '../src';
+import { Switch, HQSwitch } from '../src';
 
-const meta: Meta<HQRadio> = {
-  title: 'RADIO',
-  component: Radio,
+const meta: Meta<HQSwitch> = {
+  title: 'SWITCH',
+  component: Switch,
   argTypes: {
-    children: {
-      control: {
-        type: 'text',
-      },
-    },
     width: {
       control: {
         type: 'text',
       },
     },
     height: {
-      control: {
-        type: 'text',
-      },
-    },
-    labelSize: {
-      control: {
-        type: 'text',
-      },
-    },
-    colorSchema: {
       control: {
         type: 'text',
       },
@@ -44,10 +29,10 @@ const meta: Meta<HQRadio> = {
 
 export default meta;
 
-const Template: Story<HQRadio> = args => <Radio {...args} />;
+const Template: Story<HQSwitch> = args => <Switch {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
-export const RadioStory = Template.bind({});
+export const SwitchStory = Template.bind({});
 
-RadioStory.args = {};
+SwitchStory.args = {};
