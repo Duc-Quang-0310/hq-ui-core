@@ -32,7 +32,13 @@ export const Radio = React.forwardRef<HTMLInputElement, HQRadio>(
       data-radio-disabled={disabled}
     >
       {children}
-      <input type="radio" ref={ref} {...other} className="hq-radio-input" />
+      <input
+        type="radio"
+        ref={ref}
+        {...other}
+        className="hq-radio-input"
+        checked
+      />
       <span
         className="checkmark-radio"
         style={{

@@ -34,7 +34,7 @@ export const Checkbox = React.forwardRef<HTMLInputElement, HQCheckBox>(
       data-checkbox-disabled={disabled}
     >
       {children}
-      <input type="checkbox" ref={ref} {...other} />
+      <input type="checkbox" ref={ref} {...other} checked />
       <span
         className="checkmark"
         style={{

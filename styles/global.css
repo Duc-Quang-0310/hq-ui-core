@@ -326,14 +326,13 @@ button[data-color]:not([data-color="null"])[data-variant="solid"]:focus {
 }
 
 button[data-color]:not([data-color="null"])[data-variant="solid"]:hover {
-  filter: brightness(110%);
+  filter: brightness(150%);
 }
 
 button[data-color]:not(
     [data-color="null"]
   )[data-variant="solid"]:focus-visible {
-  background-color: currentColor;
-  outline: 3px solid currentColor;
+  outline: 1px solid currentColor;
 }
 
 button[data-color]:not([data-color="null"])[data-variant="ghost"] {
@@ -347,14 +346,13 @@ button[data-color]:not([data-color="null"])[data-variant="ghost"]:focus {
 }
 
 button[data-color]:not([data-color="null"])[data-variant="ghost"]:hover {
-  background-color: #edf2fd;
+  filter: brightness(150%);
 }
 
 button[data-color]:not(
     [data-color="null"]
   )[data-variant="ghost"]:focus-visible {
-  background-color: #e8f7ef;
-  outline: 3px solid currentColor;
+  outline: 1px solid currentColor;
 }
 
 button[data-color]:not([data-color="null"])[data-variant="dash"] {
@@ -368,12 +366,11 @@ button[data-color]:not([data-color="null"])[data-variant="dash"]:focus {
 }
 
 button[data-color]:not([data-color="null"])[data-variant="dash"]:hover {
-  background-color: #edf2fd;
+  filter: brightness(130%);
 }
 
 button[data-color]:not([data-color="null"])[data-variant="dash"]:focus-visible {
-  background-color: #e8f7ef;
-  outline: 3px solid currentColor;
+  outline: 1px solid currentColor;
 }
 
 button[data-color]:not([data-color="null"])[data-variant="text"] {
@@ -386,12 +383,11 @@ button[data-color]:not([data-color="null"])[data-variant="text"]:focus {
 }
 
 button[data-color]:not([data-color="null"])[data-variant="text"]:hover {
-  background-color: #e8f7ef;
+  filter: brightness(150%);
 }
 
 button[data-color]:not([data-color="null"])[data-variant="text"]:focus-visible {
-  background-color: #e8f7ef;
-  outline: 3px solid currentColor;
+  outline: 1px solid currentColor;
 }
 
 /* Title */
@@ -754,10 +750,10 @@ label[data-checkbox-disabled="true"]
 
 label[data-checkbox-disabled="true"]
   .checkmark[data-indeterminate="true"]:after {
-  left: 0.15em;
-  top: 0.45em;
-  width: 0.7em;
-  height: 0.05em;
+  left: 15%;
+  top: 45%;
+  width: 70%;
+  height: 7%;
   background-color: #9fb0c7;
 }
 
@@ -825,8 +821,8 @@ label[data-container="hq-radio-button"] .checkmark-radio:after {
   content: "";
   position: absolute;
   display: none;
-  top: 10%;
-  left:10%;
+  top: 8%;
+  left:8%;
   width: 80%;
   height: 80%;
   border-radius: 50%;
@@ -854,10 +850,10 @@ label[data-radio-disabled="true"] .checkmark-radio:after {
   content: "";
   position: absolute;
   display: none;
-  top: 0.2em;
-  left: 0.2em;
-  width: 0.6em;
-  height: 0.6em;
+  top: 8%;
+  left: 8%;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
   background: #bfcad9;
 }
@@ -1316,6 +1312,16 @@ div#hq-modal[data-display="true"]
   > button {
   flex: 1;
 }
+
+/* Modal */
+div#hq-modal[data-type="hq-modal"] div.modal-content header.modal-header {
+  margin-bottom: 10px;
+}
+
+div#hq-modal[data-type="hq-modal"] div.modal-content body.modal-body {
+  margin-bottom: 8px;
+}
+
 
 
 @keyframes modal-drop {

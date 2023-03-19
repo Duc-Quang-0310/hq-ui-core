@@ -16,12 +16,12 @@ export interface HQPopup {
   children?: React.ReactNode;
   contentAlign?: HQContentAlign;
   modalType?: HQPopupType;
-  isOpen?: boolean;
+  isOpen: boolean;
   contentTitle?: string;
   contentBody?: string;
   buttonLeftText?: string;
   buttonRightText?: string;
-  handleClose?: () => void;
+  handleClose: () => void;
   handleSubmit?: () => void;
 }
 
@@ -31,15 +31,14 @@ export const Popup: React.FC<HQPopup> = ({
   children,
   isOpen = true,
   modalType = 'error',
-  contentTitle = 'Lorem ipsum dolor sit amet.',
-  contentBody = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis ante ut neque cursus pulvinar ut vitae mi. Aenean sit amet sem porttitor dui mollis congue in sit amet risus.',
+  contentTitle,
+  contentBody,
   buttonLeftText = 'Cancel',
   buttonRightText = 'Submit',
   contentAlign = 'top-to-bottom',
   handleClose,
   handleSubmit,
 }) => {
-  const [open, setOpen] = React.useState(isOpen);
   const contentStucture = React.useMemo<{
     color: string;
     icon: React.ReactNode;
@@ -92,7 +91,7 @@ export const Popup: React.FC<HQPopup> = ({
     }
   }, [modalType, contentAlign]);
 
-  if (!open) {
+  if (!isOpen) {
     return null;
   }
 
@@ -101,22 +100,21 @@ export const Popup: React.FC<HQPopup> = ({
       id="hq-modal"
       data-type="hq-modal"
       className={containerClassname}
-      data-display={open}
+      data-display={isOpen}
     >
       <div className={`modal-content ${contentClassname}`}>
+        <span
+          className="hq-close"
+          onClick={() => {
+            handleClose?.();
+          }}
+        >
+          &times;
+        </span>
         {children ? (
           children
         ) : (
           <>
-            <span
-              className="hq-close"
-              onClick={() => {
-                setOpen(false);
-                handleClose?.();
-              }}
-            >
-              &times;
-            </span>
             <div
               className="hq-popup-icon_container"
               data-top-to-bottom={contentAlign === 'top-to-bottom'}
@@ -151,7 +149,6 @@ export const Popup: React.FC<HQPopup> = ({
               <Button
                 color="#F2F5F8"
                 onClick={() => {
-                  setOpen(false);
                   handleClose?.();
                 }}
               >

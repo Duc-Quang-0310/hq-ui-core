@@ -48,7 +48,13 @@ export const Button = React.forwardRef<HTMLButtonElement, HQButtonProps>(
       }}
     >
       {prefixEl ? <span className="prefix">{prefixEl}</span> : null}
-      {children}
+      <span
+        style={{
+          color: variant === 'solid' ? 'white' : color,
+        }}
+      >
+        {children}
+      </span>
       {surfixEl ? <span className="surfix">{surfixEl}</span> : null}
     </button>
   )
