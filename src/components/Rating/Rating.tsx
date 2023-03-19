@@ -40,15 +40,18 @@ export const Rating = React.forwardRef<HTMLDivElement, HQRatingProps>(
     );
     const [star, setStar] = React.useState<number>(value || defaultValue || 0);
     const [hoverStar, setHoverStar] = React.useState(0);
-    const handleOnClick = (index: number) => {
-      if (allowClear && index === star - 1) {
-        setStar(0);
-        onChangeRate?.(0);
-      } else {
-        setStar(index + 1);
-        onChangeRate?.(index + 1);
-      }
-    };
+    const handleOnClick = React.useCallback(
+      (index: number) => {
+        if (allowClear && index === star - 1) {
+          setStar(0);
+          onChangeRate?.(0);
+        } else {
+          setStar(index + 1);
+          onChangeRate?.(index + 1);
+        }
+      },
+      [onChangeRate]
+    );
 
     return (
       <div

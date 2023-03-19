@@ -11,6 +11,11 @@ const meta: Meta<HQButtonProps> = {
         type: 'text',
       },
     },
+    color: {
+      control: {
+        type: 'text',
+      },
+    },
   },
   parameters: {
     controls: { expanded: true },

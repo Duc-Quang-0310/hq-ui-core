@@ -710,10 +710,10 @@ label[data-container="hq-checkbox-container"] input:checked ~ .checkmark:after {
 /* Style the checkmark/indicator */
 label[data-container="hq-checkbox-container"]
   .checkmark[data-indeterminate="false"]:after {
-  left: 0.4em;
-  top: 0.1em;
-  width: 0.2em;
-  height: 0.5em;
+  left: 40%;
+  top: 10%;
+  width: 20%;
+  height: 50%;
   border: solid white;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
@@ -723,10 +723,10 @@ label[data-container="hq-checkbox-container"]
 
 label[data-container="hq-checkbox-container"]
   .checkmark[data-indeterminate="true"]:after {
-  left: 0.15em;
-  top: 0.45em;
-  width: 0.7em;
-  height: 0.05em;
+  left: 15%;
+  top: 45%;
+  width: 70%;
+  height: 7%;
   background-color: white;
 }
 
@@ -741,10 +741,10 @@ label[data-checkbox-disabled="true"] .checkmark {
 
 label[data-checkbox-disabled="true"]
   .checkmark[data-indeterminate="false"]:after {
-  left: 0.4em;
-  top: 0.1em;
-  width: 0.2em;
-  height: 0.5em;
+  left: 40%;
+  top: 10%;
+  width: 20%;
+  height: 50%;
   border: solid #9fb0c7;
   border-width: 0 2px 2px 0;
   -webkit-transform: rotate(45deg);
@@ -825,10 +825,10 @@ label[data-container="hq-radio-button"] .checkmark-radio:after {
   content: "";
   position: absolute;
   display: none;
-  top: 0.2em;
-  left: 0.2em;
-  width: 0.6em;
-  height: 0.6em;
+  top: 10%;
+  left:10%;
+  width: 80%;
+  height: 80%;
   border-radius: 50%;
   background: currentColor;
 }
@@ -1185,6 +1185,12 @@ div#hq-modal[data-type="hq-modal"] {
   transition: all 0.3s ease;
 }
 
+div#hq-modal[data-type="hq-modal"]
+  div.modal-content {
+    animation: modal-drop 0.5s normal ;
+}
+
+
 /* Modal Content */
 div#hq-modal[data-type="hq-modal"] > .modal-content {
   background-color: #fefefe;
@@ -1225,6 +1231,12 @@ div#hq-modal[data-type="hq-modal"] > .modal-content > .hq-close:hover,
 
 div#hq-modal[data-display="true"] {
   display: block;
+}
+
+div#hq-modal[data-display="true"] 
+  div.modal-content 
+  div.hq-popup-icon_container {
+  margin-bottom: 13px;
 }
 
 div#hq-modal[data-display="true"]
@@ -1303,4 +1315,17 @@ div#hq-modal[data-display="true"]
   section.hq-popup-button_container[data-top-to-bottom="true"]
   > button {
   flex: 1;
+}
+
+
+@keyframes modal-drop {
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }

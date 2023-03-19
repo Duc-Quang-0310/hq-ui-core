@@ -30,9 +30,9 @@ export const Popup: React.FC<HQPopup> = ({
   contentClassname,
   children,
   isOpen = true,
-  modalType = 'info',
-  contentTitle = 'Content title',
-  contentBody = 'It is a long established fact that a reader will be distracted by the readable content.',
+  modalType = 'error',
+  contentTitle = 'Lorem ipsum dolor sit amet.',
+  contentBody = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis ante ut neque cursus pulvinar ut vitae mi. Aenean sit amet sem porttitor dui mollis congue in sit amet risus.',
   buttonLeftText = 'Cancel',
   buttonRightText = 'Submit',
   contentAlign = 'top-to-bottom',
@@ -119,7 +119,6 @@ export const Popup: React.FC<HQPopup> = ({
             </span>
             <div
               className="hq-popup-icon_container"
-              style={{ marginBottom: '13px' }}
               data-top-to-bottom={contentAlign === 'top-to-bottom'}
             >
               <div className={`hq-popup-icon hq-popup-icon_${modalType} `}>
