@@ -13,6 +13,7 @@ export const Images = React.forwardRef<HTMLImageElement, HQImage>(
       useLoadingSkeleton = true,
       useLoadingFallback = false,
       width,
+      alt,
       height,
       style,
       ...other
@@ -62,6 +63,7 @@ export const Images = React.forwardRef<HTMLImageElement, HQImage>(
           height,
           ...style,
         }}
+        alt={alt}
         {...other}
       />
     );

@@ -50,7 +50,7 @@ export const Rating = React.forwardRef<HTMLDivElement, HQRatingProps>(
           onChangeRate?.(index + 1);
         }
       },
-      [onChangeRate]
+      [onChangeRate, allowClear, star]
     );
 
     return (

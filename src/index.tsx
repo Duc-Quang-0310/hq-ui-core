@@ -13,4 +13,5 @@ export * from './components/Switch';
 export * from './components/Divider';
 export * from './components/Popup';
 export * from './components/Modal';
+export * from './components/Progress';
 export * from './constant/color';

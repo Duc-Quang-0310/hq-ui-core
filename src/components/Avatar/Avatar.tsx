@@ -20,6 +20,7 @@ export const Avatar = React.forwardRef<HTMLImageElement, HQAvatar>(
       width,
       height,
       style,
+      alt = '',
       avatarSize = 'md',
       ...other
     },
@@ -69,6 +70,7 @@ export const Avatar = React.forwardRef<HTMLImageElement, HQAvatar>(
           height,
           ...style,
         }}
+        alt={alt}
         data-avatar={avatarSize}
         {...other}
       />
