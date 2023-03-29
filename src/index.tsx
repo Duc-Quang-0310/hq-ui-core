@@ -15,4 +15,7 @@ export * from './components/Popup';
 export * from './components/Modal';
 export * from './components/Progress';
 export * from './components/Snackbar';
+export * from './components/Tooltip';
+export * from './components/Range';
+export * from './components/DoubleRange';
 export * from './constant/color';
