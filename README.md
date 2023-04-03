@@ -31,6 +31,9 @@ import "@quangnguyenduc/hq-ui/dist/styles.min.css";
 - Switch
 - Text
 - Title
+- Steps
+- Skeleton Loading
+- Error Boundary
 
 
 

@@ -18,4 +18,7 @@ export * from './components/Snackbar';
 export * from './components/Tooltip';
 export * from './components/Range';
 export * from './components/DoubleRange';
+export * from './components/Skeleton';
+export * from './components/Steps';
+export * from './components/ErrorBoundary';
 export * from './constant/color';
