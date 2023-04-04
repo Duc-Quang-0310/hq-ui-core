@@ -1,10 +1,10 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { Modal, HQModal } from '../src';
+import { Input, HQInput } from '../src';
 
-const meta: Meta<HQModal> = {
-  title: 'MODAL',
-  component: Modal,
+const meta: Meta<HQInput> = {
+  title: 'INPUT',
+  component: Input,
   argTypes: {},
   parameters: {
     controls: { expanded: true },
@@ -13,10 +13,10 @@ const meta: Meta<HQModal> = {
 
 export default meta;
 
-const Template: Story<HQModal> = args => <Modal {...args} />;
+const Template: Story<HQInput> = args => <Input {...args} />;
 
 // By passing using the Args format for exported stories, you can control the props for a component for reuse in a test
 // https://storybook.js.org/docs/react/workflows/unit-testing
-export const ModalStory = Template.bind({});
+export const InputStory = Template.bind({});
 
-ModalStory.args = {};
+InputStory.args = {};

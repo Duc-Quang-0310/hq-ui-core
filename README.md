@@ -34,6 +34,8 @@ import "@quangnguyenduc/hq-ui/dist/styles.min.css";
 - Steps
 - Skeleton Loading
 - Error Boundary
+- Input
+- Pin Input
 
 
 
